@@ -24,9 +24,13 @@ app.use(cors({
 
 const PORT = process.env.PORT
 
-app.get('/', (req, res) => {
-    res.send('server is working')
-})
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message:
+      "Faaro Bookings API is running",
+  });
+});
 
 app.use('/api/auth', authRoutes)
 app.use("/api/admin", adminRoutes);
